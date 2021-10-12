@@ -1,0 +1,116 @@
+
+Алексей, г.Витебск, Республика Беларусь.
+
+
+1. Посмотреть где я
+ $ pwd
+
+2. Создать папку
+$ mkdir TEST
+
+3. Зайти в папку
+$ cd TEST
+
+4. Создать 3 папки в папке TEST
+$ mkdir 1 2 3
+
+5. Зайти в любую папку 
+$ cd TEST/1
+user@PC MINGW64 ~/TEST/1 (master)
+
+6. Создать 5 файлов (3 txt, 2 json)
+$ touch test1.txt test2.txt test3.txt 1.json 2.json
+
+7. Создать 3 папки.
+$ mkdir 1 2 3
+user@PC MINGW64 ~/TEST/1 (master)
+
+
+8. Вывести список содержимого папки
+$ ls -al
+
+total 4
+drwxr-xr-x 1 user 197121 0 Oct  1 13:17 ./
+drwxr-xr-x 1 user 197121 0 Oct  1 13:02 ../
+drwxr-xr-x 1 user 197121 0 Oct  1 13:17 1/
+-rw-r--r-- 1 user 197121 0 Oct  1 13:05 1.json
+drwxr-xr-x 1 user 197121 0 Oct  1 13:17 2/
+-rw-r--r-- 1 user 197121 0 Oct  1 13:05 2.json
+drwxr-xr-x 1 user 197121 0 Oct  1 13:17 3/
+-rw-r--r-- 1 user 197121 0 Oct  1 13:05 test1.txt
+-rw-r--r-- 1 user 197121 0 Oct  1 13:05 test2.txt
+-rw-r--r-- 1 user 197121 0 Oct  1 13:05 test3.txt
+
+9. Открыть любой txt файл
+$ vim test1.txt
+
+10)  написать туда что-нибудь, любой текст.
+11) сохранить и выйти.
+
+"i"+Enter = редактирование файла test1.txt (указываем произвольный текст)
+"Escape" – сохранение файла test1.txt , ":wq"- выход из редактирования файла test1.txt  в консоль GitBash
+
+12.Выйти из папки на уровень выше
+$ cd ..
+
+
+
+13.Переместить любые 2 файла, которые вы создали, в любую другую папку. 
+$ mv ./test1.txt test2.txt  ./1
+
+
+14. скопировать любые 2 файла, которые вы создали, в любую другую папку
+ $ cp  ./TEST/1/1/test1.txt test2.txt ./TEST/1/2
+
+
+15. Найти файл по имени в определенном каталоге.
+$ find test2.txt
+
+16. просмотреть содержимое в реальном времени (команда grep) 
+$ grep ребята test1.txt
+
+17. вывести несколько первых строк из текстового файла
+$ head -n2 test1.txt
+
+18. Вывод последних 6 строк файла
+$ tail -n 6 test1.txt
+
+19. Просмотреть содержимое длинного файла (команда less) изучите как она работает.
+$ less test2.txt
+
+20. вывести дату и время
+$ date
+
+
+Задание
+
+1) Отправить http запрос на сервер.
+1.1 $ curl http://162.55.220.72:5005/terminal-hw-request
+
+1.2 $ curl 'http://162.55.220.72:5005/get_method?name=Aleksey&age=45'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17  100    17    0     0    144      0 --:--:-- --:--:-- --:--:--   146["Aleksey","45"]
+
+
+2) Написать скрипт, который выполнит автоматически п.п. 3, 4, 5, 6, 7, 8, 13
+
+1.	$ touch myscript
+2.	$ vim myscript (при помощи редактора создаем тело скрипта в файле, соответствующее условию задания):
+
+#1/bin/bash
+cd One
+mkdir 1 2 3
+cd 1
+touch 1.txt 2.txt 3.txt 1.json 2.json
+mkdir 4 5 6
+ls -R
+mv ./1.txt 2.txt ./4
+mkdir foldername
+cd foldername
+pwd
+
+Затем сохраняем изменения в файле.
+
+3.	$ chmod +x ./myscript (делаем файл скрипта исполняемым)
+4.	$ ./myscript (запускаем скрипт)
